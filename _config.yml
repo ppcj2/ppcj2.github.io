@@ -50,7 +50,14 @@ social:
 
   - icon:	github
     url:	https://github.com/ppcj2
-    desc:	Fork me on github
+    desc:	It's me!
+    share_url:
+    share_title:
+    share_link:
+
+  - icon:	github
+    url:	https://github.com/tpdnjs888
+    desc:	It's me too!
     share_url:
     share_title:
     share_link:
