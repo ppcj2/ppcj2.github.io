@@ -1,98 +1,78 @@
-# { Personal } Jekyll Theme
-![Build Status](https://travis-ci.org/le4ker/personal-jekyll-theme.svg?branch=master)
-![license](https://img.shields.io/badge/license-MIT-blue.svg?link=https://github.com/dono-app/ios/blob/master/LICENSE)
-[![Join the chat at https://gitter.im/PanosSakkos/personal-jekyll-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/panossakkos/personal-jekyll-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+mediator
+========
 
-{ Personal } is a free responsive Jekyll theme, about you :wink:
+A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
+[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](http://blog.base68.com).
 
-You can watch it in action [here](https://le4ker.github.io/personal-jekyll-theme/)!
+Screenshots
+--------
+![screenshot](/assets/images/screenshot1.jpg)
+![screenshot](/assets/images/screenshot2.jpg)
+![screenshot](/assets/images/screenshot3.jpg)
 
-<img src="https://github.com/le4ker/personal-jekyll-theme/raw/master/.github/personal-mobile.mov.gif" height="480">
+Features
+-------
+* Fully Responsive layout
+* Use header images in articles, if you want to (add tag "image" and url to the image in the front matter section of a post)
+* Minimal design
+* Featured article support
+* FontAwesome implemented for easy use of icons fonts
+* Free & Open Source Font usage
 
-<img src="https://github.com/le4ker/personal-jekyll-theme/raw/master/.github/personal-desktop.mov.gif" height="600" width="960">
+Getting Started
+---
+- [Fork this repository](https://github.com/dirkfabisch/mediator)
+- Clone it: `git clone https://github.com/YOUR-USER/mediator`
+- Install the requried gems ([GitHub Pages](https://github.com/github/pages-gem), [Bourbon](https://github.com/thoughtbot/bourbon) and [Jekyll](https://github.com/jekyll/jekyll), [Jemoji](https://github.com/jekyll/jemoji)): `bundle install`
+- Run the jekyll server: `bundle exec jekyll serve`
 
-## What value does { Personal } add
+You should have a server up and running locally at <http://localhost:4000>.
 
-* Fork of [Timeline](https://github.com/kirbyt/timeline-jekyll-theme) (mashup of [Grayscale by Start Bootstrap](https://github.com/IronSummitMedia/startbootstrap-grayscale) and [Agency Jekyll Theme](https://github.com/y7kim/agency-jekyll-theme))
-  * Modern and minimal design
-    * Responsive templates for home page, blog archive and posts. Looks great on mobile, tablet, and desktop devices
-    * Sweet animations
-    * Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers
-  * Timeline
-    * Tell your story so far with a sleek timeline of dates, pictures and descriptions
-  * White on black text, making the reading experience tireless
-  * Google analytics  
-* Customization and full control of your website and blog through the site config
-* Customization of the website's coloring
-* Blogging functionality
-  * Preview of the latest post in the home page
-  * Archive page
-  * Syntax highlighting
-  * Emojis
-  * Gesture navigation in archive and post pages by swiping
-  * Hashtags
-  * Categories
-  * Disqus comments
-  * Bootstrap share buttons
-  * RSS feed
-* Author blurb under the posts
-* 404 page
-* iOS and Android Web App mode
-* Enforcing of https protocol
-* Protection from email harvesting
-* Sitemap
-* Travis CI integration with [html-proofer](https://github.com/gjtorikian/html-proofer)
+Configuration
+-----
 
-## Documentation
+The main settings happen in side of the _config.yml file:
 
-The theme contains documentation in the form of [blog posts](https://le4ker.github.io/personal-jekyll-theme/blog/index.html).
+### Site
 
-## How to run locally
+Main settings for the site
 
-First, you need to install jekyll and the dependencies of { Personal } by running:
+* **title**: name of your site
+* **description**: description of your site
+* **logo**: small logo for the site (300x * 300x)
+* **cover**: large background image on the index page
 
-```shell
-./scripts/install
-```
+* **name**: name site owner
+* **email**: mail address of the site owner
+* **author**: author name
+* **author_image**: small image of author (300x * 300px)
+* **disqus**: add a disqus forum for your post
 
-Then, you can build and serve your website by simply running:
+### Social
 
-```shell
-./scripts/serve-production
-```
+The template allows to add all major social platforms to your site.
+Fill the the form for each platform. If you leave the share_* entries empty, the sharing buttons below a post are not shown.  If you leave the **url** and **desc** empty the icons are not shown on the index page, but the share icons on the article pages remains untouched (Thanks to [Phil](https://github.com/philsturgeon))
 
-To serve across lan (requires su to forward the port 4000 over lan):
+* **icon**:	name of social platform (must match a name of [font-awsome](http://fortawesome.github.io/Font-Awesome/) icon set )
+* **url**:	url of your account
+* **desc**: slogan of the platform
+* **share_url**: share url
+* **share_title**: first part of url for the title
+* **share_link**: second part of the share url for the link to the post
 
-```shell
-./scripts/serve-lan-production
-```
-
-### Docker
-
-Run using Docker:
+The Liquid template engine will magical combine the different parts to a share url.
 
 ```
-docker run --rm -it -p 4000:4000 -v "$PWD:/srv/jekyll" jekyll/jekyll jekyll serve --watch --host "0.0.0.0" --config _config.yml,_config.dev.yml
-```
+http://twitter.com/share?text=post_title&amp;url=post_url
+````
 
-Run using Docker with Docker Compose:
-```
-docker-compose up
-```
+See [_config.yml](https://github.com/dirkfabisch/mediator/blob/master/_config.yml) for more examples.
 
-## OSS used in { Personal }
+Licensing
+---------
 
-One of the reasons { Personal } is real is the following OSS projects:
+[MIT](https://github.com/dirkfabisch/mediator/blob/master/LICENCE) with no added caveats, so feel free to use this on your site without linking back to me or using a disclaimer or anything silly like that.
 
-  1. [Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
-  2. [hammer.js](https://hammerjs.github.io/)
-  3. [highlightjs](https://highlightjs.org/)
-  4. [RRSSB](https://github.com/kni-labs/rrssb)
-  5. [Timeline](https://github.com/kirbyt/timeline-jekyll-theme)
-  6. [typed.js](https://github.com/mattboldt/typed.js/)
-
-<div style="font-size:16px;margin:0 auto;width:300px">
-    <a href="https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi">
-        <img src="https://blockchain.info/Resources/buttons/donate_64.png"/>
-    </a>
-</div>
+Contact
+-------
+I'd love to hear from you at [@dirkfabisch](https://twitter.com/dirkfabisch). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
